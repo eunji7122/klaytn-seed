@@ -2,7 +2,7 @@ pragma solidity ^0.5.6;
 
 import '@openzeppelin/contracts/ownership/Ownable.sol';
 
-contract EunjiBank is Ownable {
+contract SimpleBank is Ownable {
 	mapping(address => uint256) private balance;
 	bool private bankOpen = true;
 
@@ -12,7 +12,7 @@ contract EunjiBank is Ownable {
 	}
 
 	function setBankState(bool _bankOpen) external onlyOwner {
-		bankOpen = _bankOpen;l
+		bankOpen = _bankOpen;
 	}
 
 	function deposit(uint256 _amount) external payable bankOpened {
